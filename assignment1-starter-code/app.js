@@ -12,6 +12,7 @@ function LunchCheckController($scope) {
   $scope.calcFoodStatus = function () {
 
     $scope.output = $scope.input ? ($scope.input.split(',').length <=3 ? "Enjoy!" : "Too much!") : "Please enter data first";
+    console.log($scope);
   };
 }
 
