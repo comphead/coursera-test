@@ -1,0 +1,6 @@
+<h3>Category list: </h3>
+<table border="solid">
+  <tr ng-repeat="item in $ctrl.items" ui-sref="items({shortName: item.short_name})">
+    <td>{{ item.name }}</td>
+  </tr>
+</table>
