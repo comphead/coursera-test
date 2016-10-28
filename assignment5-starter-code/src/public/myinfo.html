@@ -1,0 +1,29 @@
+<h1>My Info</h1>
+
+<a ui-sref="public.signup" ui-sref-active="active" ng-if="!reg.user">
+  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
+
+<div ng-if="reg.user">
+  <table border="solid">
+    <tr>
+      <td>First Name </td>
+      <td>{{reg.user.firstname}}</td>
+    </tr>
+    <tr>
+      <td>Last Name </td>
+      <td>{{reg.user.lastname}}</td>
+    </tr>
+    <tr>
+      <td>Email </td>
+      <td>{{reg.user.email}}</td>
+    </tr>
+    <tr>
+      <td>Phone </td>
+      <td>{{reg.user.phone}}</td>
+    </tr>
+    <tr>
+      <td>MenuItem </td>
+      <td>{{reg.user.menunumber}} - {{reg.user.menuitem.description}}</td>
+    </tr>
+  </table>
+</div>

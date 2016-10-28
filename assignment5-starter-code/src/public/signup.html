@@ -1,0 +1,72 @@
+<h1>My Info</h1>
+
+<fieldset>
+  <form name='infoForm' novalidate>
+
+    <input type="text" name="firstname" placeholder="Enter first name"
+    style="color:black;"
+      ng-model="signup.user.firstname"
+      required
+      minlength="4"
+      ng-maxlength="10">
+      <span
+        ng-if="(infoForm.firstname.$error.minlength || infoForm.firstname.$error.required) && infoForm.firstname.$touched">
+        Firstname must be at least 4 characters long
+      </span>
+      <span ng-if="infoForm.firstname.$error.maxlength && infoForm.firstname.$touched">
+        Firstname must not be longer than 10 characters
+      </span>
+      <br>
+
+      <input type="text" name="lastname" placeholder="Enter last name"
+      style="color:black;"
+        ng-model="signup.user.lastname"
+        required
+        minlength="4"
+        ng-maxlength="10">
+        <span
+          ng-if="(infoForm.lastname.$error.minlength || infoForm.lastname.$error.required) && infoForm.lastname.$touched">
+          Lastname must be at least 4 characters long
+        </span>
+        <span ng-if="infoForm.lastname.$error.maxlength && infoForm.lastname.$touched">
+          Lastname must not be longer than 10 characters
+        </span>
+        <br>
+
+    <input type="email" name="email" placeholder="Email"
+    style="color:black;"
+      ng-model="signup.user.email"
+      required>
+      <span ng-if="infoForm.email.$invalid && infoForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+      <br>
+
+    <input type="text" name="phone" placeholder="Phone ###-###-####"
+    style="color:black;"
+      ng-model="signup.user.phone"
+      pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="infoForm.phone.$invalid && infoForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+      <br>
+
+      <input type="text" name="menunumber" placeholder="Menu Number"
+      style="color:black;"
+        ng-model="signup.user.menunumber">
+        <br>
+
+    <button
+      ng-disabled="infoForm.$invalid"
+      style="color:black;"
+      ng-click="signup.submit()">Submit</button>
+
+      <div style="margin-top: 10px;">
+        Form valid? {{ infoForm.$valid }}
+      </div>
+  </form>
+</fieldset>
+
+<span>
+  {{signup.msg}}
+</span>
